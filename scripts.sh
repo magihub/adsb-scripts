@@ -20,7 +20,7 @@ while true; do
     echo "12. 卸载飞常准variflight 数据上传程序"
     echo
     echo "其他工具"
-    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置    17. 更改登陆motd信息    17. 退出脚本"
+    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置    17. 更改motd（纯粹好玩）    18. 退出脚本"
     echo
 
     read choice
@@ -249,14 +249,14 @@ while true; do
         bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/Varilightadsb-upload/blob/main/setup.sh)"
         exit
         ;;
-    17)
-        echo "正在退出"
-        exit
-        ;;
     18)
         echo "正在更改"
         rm -rf /etc/motd
         wget -P /etc https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/motd
+        ;;    
+    17)
+        echo "正在退出"
+        exit
         ;;
     *)
         echo "无效的选择"
