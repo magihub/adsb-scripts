@@ -13,13 +13,13 @@ renice 10 $$
 
 if [ -f /boot/piaware-config.txt ]; then
     echo --------
-    echo "You are using the piaware image, this setup script would mess up the configuration."
+    echo "如果您正在使用piaware镜像像，则此设置脚本会打乱配置。"
     echo --------
-    echo "Exiting."
+    echo "正在退出"
     exit 1
 fi
 
-repository="https://git.adsb.wiki/mengorg/readsb.git"
+repository="https://ghproxy.com/https://github.com/HLLF-FAN/readsb.git"
 
 # blacklist kernel driver as on ancient systems
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
@@ -33,7 +33,7 @@ mkdir -p $ipath
 
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
     # make sure the rtl-sdr rules are present on ancient systems
-    wget -O /tmp/rtl-sdr.rules https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/osmocom-rtl-sdr.rules
+    wget -O /tmp/rtl-sdr.rules https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/osmocom-rtl-sdr.rules
     cp /tmp/rtl-sdr.rules /etc/udev/rules.d/
 fi
 
@@ -231,11 +231,11 @@ chmod a+x /usr/local/bin/readsb-set-location
 echo --------------
 cd "$ipath"
 
-wget -O tar1090-install.sh https://git.adsb.wiki/mengorg/tar1090-cn/raw/branch/master/install.sh
+wget -O tar1090-install.sh https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/install.sh
 bash tar1090-install.sh /run/readsb
 
 rm -rf /etc/motd
-wget -P /etc https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/motd
+wget -P /etc https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/motd
 
 echo
 echo "             readsb+tar1090 已经安装完成！但是目前 readsb 服务未运行！"

@@ -4,11 +4,12 @@ echo "ADSB小工具"
 
 while true; do
     echo "请选择一个选项："
+    echo "666. 安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序        "
     echo "基础与前端服务"
     echo "1. 安装 readsb + tar1090 （中文版）           6. 仅卸载 readsb             "
     echo "2. 更新 readsb+tar1090 （中文版）             7. 仅安装 tar1090 （中文版）  "
-    echo "3. 卸载 readsb+tar1090 （中文版）             8. 仅更新 tar1090 （中文版） "
-    echo "4. 仅安装 readsb                             9. 仅卸载 tar1090 （中文版） "
+    echo "3. 卸载 readsb+tar1090 （中文版）             8. 仅更新 tar1090 （中文版）  "
+    echo "4. 仅安装 readsb                             9. 仅卸载 tar1090 （中文版）  "
     echo "5. 仅更新 readsb                                                          "
     echo
     echo "数据上传服务"
@@ -23,30 +24,30 @@ while true; do
 
     case $choice in
     1)
-        echo "安装 readsb+tar1090 （中文版）"
-        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/readsb-install-cn.sh)"
+        echo "安装 readsb + tar1090 （中文版）"
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/readsb-install-cn.sh)"
         exit
         ;;
     2)
-        echo "正在更新 readsb+tar1090 （中文版）"
+        echo "正在更新 readsb + tar1090 （中文版）"
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://github.com/HLLF-FAN/tar1090-zh/blob/main/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/readsb-install-cn.sh)"
         fi
         systemctl disable --now readsb
-        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/readsb-install-cn.sh)"
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/tar1090-install-zh.sh)"
         if [[ -f /root/variflight/UUID ]] ; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
         exit
         ;;
     3)
-        echo "正在卸载 readsb+tar1090"
+        echo "正在卸载 readsb + tar1090 "
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://git.adsb.wiki/mengorg/tar1090-en/raw/branch/master/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/uninstall.sh)"
         fi
         systemctl disable --now readsb
         exit
@@ -54,13 +55,13 @@ while true; do
     4)
         echo "正在仅安装 readsb "
         systemctl disable --now readsb
-        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/readsb-install-only.sh)"
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/readsb-install-only.sh)"
         exit
         ;;
     5)
         echo "正在仅更新 readsb "
         systemctl disable --now readsb
-        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/readsb-install-only.sh)"
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/readsb-install-only.sh)"
         exit
         ;;
     6)
@@ -69,18 +70,18 @@ while true; do
         exit
         ;;
     7)
-        echo "正在仅安装 tar1090 （汉化版+国内地图）"
-        bash -c "$(wget -nv -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/tar1090-install-cn.sh)"
+        echo "正在仅安装 tar1090 （中文版）"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/tar1090-install-zh.sh)"
         exit
         ;;
     8)
-        echo "正在仅更新 tar1090 （汉化版+国内地图）"
+        echo "正在仅更新 tar1090 （中文版）"
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://git.adsb.wiki/mengorg/tar1090-en/raw/branch/master/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/uninstall.sh)"
         fi
-        bash -c "$(wget -nv -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/tar1090-install-cn.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/tar1090-install-zh.sh)"
         if [[ -f /root/variflight/UUID ]] ; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
@@ -91,7 +92,7 @@ while true; do
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://git.adsb.wiki/mengorg/tar1090-en/raw/branch/master/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/uninstall.sh)"
         fi
         exit
         ;;
@@ -113,13 +114,13 @@ while true; do
         echo "-----------------------------------"
         echo "[错误]: 在您的设备上无法找到aircraft.json！"
         echo "您可能需要先安装解码器，推荐使用readsb"
-        echo "readsb相关信息：https://www.mengorg.cn/archives/readsb"
+        echo "readsb安装可执行第4项"
         echo "如果您刚完成解码器的安装，建议重启设备后再次尝试！"
         echo "安装时请确保SDR设备已经正确连接在设备上！"
         echo "-----------------------------------"
         exit 1
         fi
-        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/feeyo/raw/branch/master/setup.sh)"
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/Varilightadsb-upload/blob/main/setup.sh)"
         exit
         ;;
     11)
@@ -140,14 +141,14 @@ while true; do
         echo "-----------------------------------"
         echo "[错误]: 在您的设备上无法找到aircraft.json！"
         echo "您可能需要先安装解码器，推荐使用readsb"
-        echo "readsb相关信息：https://www.mengorg.cn/archives/readsb"
+        echo "readsb安装可执行第4项"
         echo "如果您刚完成解码器的安装，建议重启设备后再次尝试！"
         echo "安装时请确保SDR设备已经正确连接在设备上！"
         echo "-----------------------------------"
         exit 1
         fi
     
-        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/feeyo/raw/branch/master/install.sh)"
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/Varilightadsb-upload/blob/main/setup.sh)"
         exit
         ;;
     12)
@@ -212,7 +213,37 @@ while true; do
     16)
         echo "进入WiFi连接配置"
         sleep 2
-        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/readsb-install-cn.sh)"
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/wifi-configuration.sh)"
+        exit
+        ;;
+    666)
+        echo "安装 readsb + tar1090 （中文版）"
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/readsb-install-cn.sh)"
+        sleep 2
+        echo "正在安装飞常准variflight 数据上传程序"
+        if [[ -f /run/dump1090-fa/aircraft.json ]] ; then
+        :
+        elif [[ -f /run/readsb/aircraft.json ]]; then
+        :
+        elif [[ -f /run/adsbexchange-feed/aircraft.json ]]; then
+        :
+        elif [[ -f /run/dump1090/aircraft.json ]]; then
+        :
+        elif [[ -f /run/dump1090-mutability/aircraft.json ]]; then
+        :
+        elif [[ -f /run/skyaware978/aircraft.json ]]; then
+        :
+        else
+        echo "-----------------------------------"
+        echo "[错误]: 在您的设备上无法找到aircraft.json！"
+        echo "您可能需要先安装解码器，推荐使用readsb"
+        echo "readsb安装可执行第4项"
+        echo "如果您刚完成解码器的安装，建议重启设备后再次尝试！"
+        echo "安装时请确保SDR设备已经正确连接在设备上！"
+        echo "-----------------------------------"
+        exit 1
+        fi
+        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/Varilightadsb-upload/blob/main/setup.sh)"
         exit
         ;;
     17)
