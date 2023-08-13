@@ -21,6 +21,7 @@ while true; do
     echo
     echo "其他工具"
     echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置    17. 退出脚本"
+    echo
 
     read choice
 
