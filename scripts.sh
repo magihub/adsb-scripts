@@ -220,8 +220,8 @@ while true; do
         exit
         ;;
     666)
-        echo "安装 readsb + tar1090 （中文版）"
-        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/readsb-install-cn.sh)"
+        echo "安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序"
+        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/readsb-install-cn.sh)"
         sleep 2
         echo "正在安装飞常准variflight 数据上传程序"
         if [[ -f /run/dump1090-fa/aircraft.json ]] ; then
