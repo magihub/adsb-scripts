@@ -74,7 +74,7 @@ while true; do
         ;;
     7)
         echo "正在仅安装 tar1090 （中文版）"
-        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/tar1090-install-zh.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/install.sh)"
         exit
         ;;
     8)
