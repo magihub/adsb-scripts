@@ -4,7 +4,9 @@ echo "ADSB小工具"
 
 while true; do
     echo "请选择一个选项："
+    echo
     echo "666. 安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序        "
+    echo
     echo "基础与前端服务"
     echo "1. 安装 readsb + tar1090 （中文版）           6. 仅卸载 readsb             "
     echo "2. 更新 readsb+tar1090 （中文版）             7. 仅安装 tar1090 （中文版）  "
