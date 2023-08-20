@@ -28,7 +28,7 @@ while true; do
     case $choice in
     1)
         echo "安装 readsb + tar1090 （中文版）"
-        bash -c "$(wget -O - https://git.adsb.wiki/mengorg/adsb-scripts/raw/branch/master/readsb-install-cn.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090/raw/master/readsb-install-cn.sh)"
         exit
         ;;
     2)
@@ -39,7 +39,7 @@ while true; do
         bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/readsb-install-cn.sh)"
         fi
         systemctl disable --now readsb
-        bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/tar1090-install-zh.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/raw/master/install.sh)"
         if [[ -f /root/variflight/UUID ]] ; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
