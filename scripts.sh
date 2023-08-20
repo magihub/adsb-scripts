@@ -84,7 +84,7 @@ while true; do
         else
         bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/uninstall.sh)"
         fi
-        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/tar1090-install-zh.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090/raw/master/install.sh)"
         if [[ -f /root/variflight/UUID ]] ; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
@@ -95,7 +95,7 @@ while true; do
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090/raw/master/uninstall.sh)"
         fi
         exit
         ;;
