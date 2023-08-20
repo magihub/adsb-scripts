@@ -28,7 +28,7 @@ if grep -E 'wheezy|jessie' /etc/os-release -qs; then
     rmmod dvb_usb_rtl28xxu &>/dev/null || true
 fi
 
-ipath=/usr/local/share/adsb-wiki/readsb-install
+ipath=/usr/local/share/adsb/readsb-install
 mkdir -p $ipath
 
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
@@ -134,7 +134,7 @@ rm -f /etc/lighttpd/conf-enabled/89-dump1090.conf
 
 if [[ -f /etc/rbfeeder.ini ]]; then
     systemctl stop rb-feeder &>/dev/null || true
-    cp -n /etc/rbfeeder.ini /usr/local/share/adsb-wiki || true
+    cp -n /etc/rbfeeder.ini /usr/local/share/adsb || true
     sed -i -e '/network_mode/d' -e '/\[network\]/d' -e '/mode=/d' -e '/external_port/d' -e '/external_host/d' /etc/rbfeeder.ini
     sed -i -e 's/\[client\]/\0\nnetwork_mode=true/' /etc/rbfeeder.ini
     cat >>/etc/rbfeeder.ini <<"EOF"
@@ -154,7 +154,7 @@ then
     systemctl stop fr24feed &>/dev/null || true
     chmod a+rw /etc/fr24feed.ini || true
     apt-get install -y dos2unix &>/dev/null && dos2unix /etc/fr24feed.ini &>/dev/null || true
-    cp -n /etc/fr24feed.ini /usr/local/share/adsb-wiki || true
+    cp -n /etc/fr24feed.ini /usr/local/share/adsb || true
 
     if ! grep -e 'host=' /etc/fr24feed.ini &>/dev/null; then echo 'host=' >> /etc/fr24feed.ini; fi
     if ! grep -e 'receiver=' /etc/fr24feed.ini &>/dev/null; then echo 'receiver=' >> /etc/fr24feed.ini; fi
@@ -227,6 +227,24 @@ systemctl restart readsb
 EOF
 chmod a+x /usr/local/bin/readsb-set-location
 
+# 提示用户输入经纬度
+read -p "请输入纬度: " lat
+read -p "请输入经度: " lon
+
+# 验证纬度和经度的有效性
+if ! awk "BEGIN{ exit ($lat > 90) }" || ! awk "BEGIN{ exit ($lat < -90) }"; then
+    echo "无效的纬度: $lat"
+    exit 1
+fi
+if ! awk "BEGIN{ exit ($lon > 180) }" || ! awk "BEGIN{ exit ($lon < -180) }"; then
+    echo "无效的经度: $lon"
+    exit 1
+fi
+
+# 保存经纬度到文件
+echo "$lat $lon" > /usr/local/bin/readsb-set-location
+
+echo "经纬度已保存"
 
 echo --------------
 cd "$ipath"
