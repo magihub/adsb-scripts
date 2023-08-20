@@ -28,7 +28,7 @@ while true; do
     case $choice in
     1)
         echo "安装 readsb + tar1090 （中文版）"
-        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-script/raw/master/readsb-install-cn.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/readsb-tar1090-zh-install.sh)"
         exit
         ;;
     2)
