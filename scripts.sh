@@ -249,12 +249,12 @@ while true; do
         bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/Varilightadsb-upload/blob/main/setup.sh)"
         exit
         ;;
-    18)
+    17)
         echo "正在更改"
         rm -rf /etc/motd
         wget -P /etc https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/motd
         ;;    
-    17)
+    18)
         echo "正在退出"
         exit
         ;;
