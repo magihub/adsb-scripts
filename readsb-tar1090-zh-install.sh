@@ -227,7 +227,7 @@ systemctl restart readsb
 EOF
 chmod a+x /usr/local/bin/readsb-set-location
 
-echo "------站点经纬度设置--------"
+echo "-------------------------- 站点经纬度设置 ----------------------------"
 
 # 提示用户输入经纬度
 read -p "请输入纬度: " wei
@@ -245,9 +245,10 @@ fi
 
 # 调用readsb-set-location脚本并传递经纬度参数
 readsb-set-location "$wei" "$jing"
+echo "站点经纬度已经设置，readsb安装完成，开始安装tar1090"
 systemctl restart readsb
 
-echo "----------------------------"
+echo "--------------------------------------------------------------------"
 
 cd "$ipath"
 
