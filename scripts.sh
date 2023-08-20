@@ -8,11 +8,9 @@ while true; do
     echo "666. 安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序        "
     echo
     echo "基础与前端服务"
-    echo "1. 安装 readsb + tar1090 （中文版）           6. 仅卸载 readsb             "
-    echo "2. 更新 readsb+tar1090 （中文版）             7. 仅安装 tar1090 （中文版）  "
-    echo "3. 卸载 readsb+tar1090 （中文版）             8. 仅更新 tar1090 （中文版）  "
-    echo "4. 仅安装 readsb                             9. 仅卸载 tar1090 （中文版）  "
-    echo "5. 仅更新 readsb                                                          "
+    echo "1. 安装 readsb + tar1090 （中文版）           2. 更新 readsb+tar1090 （中文版）        3. 卸载 readsb+tar1090 （中文版）"
+    echo "4. 仅安装 readsb                             5. 仅更新 readsb                         6. 仅卸载 readsb"
+    echo "7. 仅安装 tar1090 （中文版）                  8. 仅更新 tar1090 （中文版）              9. 仅卸载 tar1090 （中文版）"
     echo
     echo "数据上传服务"
     echo "10. 安装飞常准variflight 数据上传程序"
@@ -20,7 +18,7 @@ while true; do
     echo "12. 卸载飞常准variflight 数据上传程序"
     echo
     echo "其他工具"
-    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置    17. 更改motd（纯粹好玩）    18. 退出脚本"
+    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置    17. 退出脚本"
     echo
 
     read choice
@@ -248,13 +246,8 @@ while true; do
         fi
         bash -c "$(wget -O - https://ghproxy.com/https://github.com/HLLF-FAN/Varilightadsb-upload/blob/main/setup.sh)"
         exit
-        ;;
+        ;; 
     17)
-        echo "正在更改"
-        rm -rf /etc/motd
-        wget -P /etc https://ghproxy.com/https://github.com/HLLF-FAN/ADSB-scripts/blob/main/motd
-        ;;    
-    18)
         echo "正在退出"
         exit
         ;;
