@@ -28,7 +28,7 @@ if grep -E 'wheezy|jessie' /etc/os-release -qs; then
     rmmod dvb_usb_rtl28xxu &>/dev/null || true
 fi
 
-ipath=/usr/local/share/adsb/readsb-install
+ipath=/usr/local/share/adsb-fan/readsb-install
 mkdir -p $ipath
 
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
@@ -134,7 +134,7 @@ rm -f /etc/lighttpd/conf-enabled/89-dump1090.conf
 
 if [[ -f /etc/rbfeeder.ini ]]; then
     systemctl stop rb-feeder &>/dev/null || true
-    cp -n /etc/rbfeeder.ini /usr/local/share/adsb || true
+    cp -n /etc/rbfeeder.ini /usr/local/share/adsb-fan || true
     sed -i -e '/network_mode/d' -e '/\[network\]/d' -e '/mode=/d' -e '/external_port/d' -e '/external_host/d' /etc/rbfeeder.ini
     sed -i -e 's/\[client\]/\0\nnetwork_mode=true/' /etc/rbfeeder.ini
     cat >>/etc/rbfeeder.ini <<"EOF"
@@ -154,7 +154,7 @@ then
     systemctl stop fr24feed &>/dev/null || true
     chmod a+rw /etc/fr24feed.ini || true
     apt-get install -y dos2unix &>/dev/null && dos2unix /etc/fr24feed.ini &>/dev/null || true
-    cp -n /etc/fr24feed.ini /usr/local/share/adsb || true
+    cp -n /etc/fr24feed.ini /usr/local/share/adsb-fan || true
 
     if ! grep -e 'host=' /etc/fr24feed.ini &>/dev/null; then echo 'host=' >> /etc/fr24feed.ini; fi
     if ! grep -e 'receiver=' /etc/fr24feed.ini &>/dev/null; then echo 'receiver=' >> /etc/fr24feed.ini; fi
@@ -261,7 +261,7 @@ echo "                       因此需要重启设备以启动 readsb 服务"
 echo "                 tar1090的Web页面为 http://$(ip route get 1.2.3.4 | grep -m1 -o -P 'src \K[0-9,.]*')/tar1090"
 echo "                     Web界面将显示错误，直至 readsb 正常运行"
 echo
-echo 
+echo
 echo "                               ！！！注意！！！ "        
 echo "                             请不要尝试将数据传给"
 echo "          Flightradar24、Flightaware、ADS-B exchange等境外飞机跟踪网站"
