@@ -227,26 +227,28 @@ systemctl restart readsb
 EOF
 chmod a+x /usr/local/bin/readsb-set-location
 
+echo "------站点经纬度设置--------"
+
 # 提示用户输入经纬度
-read -p "请输入纬度: " lat
-read -p "请输入经度: " lon
+read -p "请输入纬度: " wei
+read -p "请输入经度: " jing
 
 # 验证纬度和经度的有效性
-if ! awk "BEGIN{ exit ($lat > 90) }" || ! awk "BEGIN{ exit ($lat < -90) }"; then
-    echo "无效的纬度: $lat"
+if ! awk "BEGIN{ exit ($wei > 90) }" || ! awk "BEGIN{ exit ($wei < -90) }"; then
+    echo "无效的纬度: $wei"
     exit 1
 fi
-if ! awk "BEGIN{ exit ($lon > 180) }" || ! awk "BEGIN{ exit ($lon < -180) }"; then
-    echo "无效的经度: $lon"
+if ! awk "BEGIN{ exit ($jing > 180) }" || ! awk "BEGIN{ exit ($jing < -180) }"; then
+    echo "无效的经度: $jing"
     exit 1
 fi
 
-# 保存经纬度到文件
-echo "$lat $lon" > /usr/local/bin/readsb-set-location
+# 调用readsb-set-location脚本并传递经纬度参数
+readsb-set-location "$wei" "$jing"
+systemctl restart readsb
 
-echo "经纬度已保存"
+echo "----------------------------"
 
-echo --------------
 cd "$ipath"
 
 wget -O tar1090-install.sh https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/raw/master/install.sh
