@@ -48,7 +48,7 @@ while true; do
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/master/uninstall.sh)"
         fi
         systemctl disable --now readsb
         exit
@@ -72,7 +72,7 @@ while true; do
         ;;
     7)
         echo "正在仅安装 tar1090 （中文版）"
-        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/main/install.sh)"
+        bash -c "$(wget -nv -O - https://ghproxy.com/https://github.com/HLLF-FAN/tar1090-zh/blob/master/install.sh)"
         exit
         ;;
     8)
