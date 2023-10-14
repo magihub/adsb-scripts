@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 指定UUID文件路径和index.html路径
-UUID_FILE=/root/variflight/UUID
+UUID_FILE=/root/get_message/UUID
 INDEX_HTML=/usr/local/share/tar1090/html/index.html
 
 # 检查UUID文件是否存在
