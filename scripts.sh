@@ -197,13 +197,13 @@ while true; do
         echo "重新生成 UUID 完成"
         echo "UUID为:"$(cat /root/variflight/UUID)
         if grep -q "UUID" /usr/local/share/tar1090/html/index.html; then
-        sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
+        sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/get_message\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
         exit
         ;;
     15)
         echo "正在更新tar1090页面UUID"
-        if [[ -f /root/variflight/UUID ]] ; then
+        if [[ -f /root/get_message/UUID ]] ; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/get_message\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         echo "tar1090页面UUID更新完成"
         else 
