@@ -204,7 +204,7 @@ while true; do
     15)
         echo "正在更新tar1090页面UUID"
         if [[ -f /root/variflight/UUID ]] ; then
-        sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
+        sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/get_message\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         echo "tar1090页面UUID更新完成"
         else 
         echo "UUID文件不存在，请重新生成！（可执行第14项）"
