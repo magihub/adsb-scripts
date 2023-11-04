@@ -154,9 +154,9 @@ while true; do
         ;;
     12)
         echo "正在卸载飞常准variflight 数据上传程序"
-        rm -r /root/variflight
+        rm -r /root/get_message
         rm -r /etc/profile.d/uuid.sh
-        crontab -l | grep -v "/root/variflight/send_message.sh >/dev/null 2>&1" | crontab -
+        crontab -l | grep -v "/root/get_message/send_message.sh >/dev/null 2>&1" | crontab -
         if grep -q "UUID" /usr/local/share/tar1090/html/index.html; then
         sed -i -e '/你的UUID是/s/.*/<a hidden>你的UUID是：<\/a>/' /usr/local/share/tar1090/html/index.html
         fi
@@ -174,10 +174,10 @@ while true; do
                 read -p "是否确认？ [1/2]: " confirm
 
                 if [ "$confirm" == "1" ]; then
-                    echo "$input" > /root/variflight/UUID
-                    echo "已自定义 UUID 为：$(cat /root/variflight/UUID)"
+                    echo "$input" > /root/get_message/UUID
+                    echo "已自定义 UUID 为：$(cat /root/get_message/UUID)"
                     if grep -q "UUID" /usr/local/share/tar1090/html/index.html; then
-                    sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
+                    sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/get_message\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
                     fi
                     exit
                 elif [ "$confirm" == "2" ]; then
@@ -192,10 +192,10 @@ while true; do
         ;;
     14)
         echo "正在重新生成 UUID"
-        rm -r /root/variflight/UUID
-        python3 /root/variflight/create_uuid.py
+        rm -r /root/get_message/UUID
+        python3 /root/get_message/create_uuid.py
         echo "重新生成 UUID 完成"
-        echo "UUID为:"$(cat /root/variflight/UUID)
+        echo "UUID为:"$(cat /root/get_message/UUID)
         if grep -q "UUID" /usr/local/share/tar1090/html/index.html; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/get_message\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
