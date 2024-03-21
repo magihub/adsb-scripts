@@ -19,7 +19,7 @@ if [ -f /boot/piaware-config.txt ]; then
     exit 1
 fi
 
-repository="https://git.adsb.wiki/mengorg/readsb.git"
+repository="https://gh-proxy.com/https://github.com/magihub/readsb.git"
 
 # blacklist kernel driver as on ancient systems
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
