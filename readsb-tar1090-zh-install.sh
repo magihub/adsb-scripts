@@ -19,7 +19,7 @@ if [ -f /boot/piaware-config.txt ]; then
     exit 1
 fi
 
-repository="https://gh-proxy.com/https://github.com/magihub/readsb.git"
+repository="https://raw.githubusercontent.com/magihub/readsb.git"
 
 # blacklist kernel driver as on ancient systems
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
@@ -33,7 +33,7 @@ mkdir -p $ipath
 
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
     # make sure the rtl-sdr rules are present on ancient systems
-    wget -O /tmp/rtl-sdr.rules https://gh-proxy.com/https://github.com/magihub/ADSB-scripts/blob/main/osmocom-rtl-sdr.rules
+    wget -O /tmp/rtl-sdr.rules https://raw.githubusercontent.com/magihub/ADSB-scripts/blob/main/osmocom-rtl-sdr.rules
     cp /tmp/rtl-sdr.rules /etc/udev/rules.d/
 fi
 
@@ -252,11 +252,11 @@ echo "站点经纬度已设置完成，readsb安装完成，开始安装tar1090"
 
 cd "$ipath"
 
-wget -O tar1090-install.sh https://gh-proxy.com/https://github.com/magihub/tar1090-zh/raw/master/install.sh
+wget -O tar1090-install.sh https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/install.sh
 bash tar1090-install.sh /run/readsb
 
 rm -rf /etc/motd
-wget -P /etc https://gh-proxy.com/https://github.com/magihub/ADSB-scripts/blob/main/motd
+wget -P /etc https://raw.githubusercontent.com/magihub/ADSB-scripts/blob/main/motd
 
 echo
 echo "             readsb+tar1090 已经安装完成！但是目前 readsb 服务未运行！"
