@@ -6,10 +6,8 @@ echo
 while true; do
     echo "请选择一个选项："
     echo
-    echo "66. 安装 readsb + tar1090 中文版 + 飞常准variflight 数据上传程序        "
-    echo
     echo "基础与前端服务"
-    echo "1. 安装 readsb + tar1090-zh           2. 更新 readsb+tar1090-zh         3. 卸载 readsb+tar1090-zh"
+    echo "1. 安装 readsb + tar1090-zh           2. 更新 readsb + tar1090-zh       3. 卸载 readsb + tar1090-zh"
     echo "4. 仅安装 readsb                      5. 仅更新 readsb                  6. 仅卸载 readsb"
     echo "7. 仅安装 tar1090-zh                  8. 仅更新 tar1090-zh              9. 仅卸载 tar1090-zh"
     echo
@@ -18,8 +16,12 @@ while true; do
     echo "11. 修复飞常准variflight 数据上传程序(会重新生成UUID)"
     echo "12. 卸载飞常准variflight 数据上传程序"
     echo
+    echo "一键安装所有"
+    echo "66. 安装 readsb + tar1090 中文版 + 飞常准variflight 数据上传程序"
+    echo
     echo "其他工具"
-    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置"
+    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置"    
+    echo
     echo "88. 退出脚本"
 
     read choice
