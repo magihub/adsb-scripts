@@ -4,7 +4,6 @@ echo "Magic ADS-B Tools"
 echo
 
 while true; do
-    echo "请选择一个选项："
     echo
     echo "基础与前端服务"
     echo "1. 安装 readsb + tar1090-zh           2. 更新 readsb + tar1090-zh       3. 卸载 readsb + tar1090-zh"
@@ -23,6 +22,9 @@ while true; do
     echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置"    
     echo
     echo "88. 退出脚本"
+    echo
+
+    echo "请选择一个选项："
     echo
     
     read choice
