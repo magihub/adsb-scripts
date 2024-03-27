@@ -255,9 +255,6 @@ cd "$ipath"
 wget -O tar1090-install.sh https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/install.sh
 bash tar1090-install.sh /run/readsb
 
-rm -rf /etc/motd
-wget -P /etc https://raw.githubusercontent.com/magihub/ADSB-scripts/blob/main/motd
-
 echo
 echo "             readsb+tar1090 已经安装完成！但是目前 readsb 服务未运行！"
 echo "                       因此需要重启设备以启动 readsb 服务"
