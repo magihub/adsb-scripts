@@ -1,11 +1,12 @@
 #!/bin/bash
 
-echo "ADSB小工具"
+echo "Magic ADSB Tools"
+echo
 
 while true; do
     echo "请选择一个选项："
     echo
-    echo "666. 安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序        "
+    echo "66. 安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序        "
     echo
     echo "基础与前端服务"
     echo "1. 安装 readsb + tar1090 （中文版）           2. 更新 readsb+tar1090 （中文版）        3. 卸载 readsb+tar1090 （中文版）"
@@ -26,7 +27,7 @@ while true; do
     case $choice in
     1)
         echo "安装 readsb + tar1090 （中文版）"
-        bash -c "$(wget -nv -O - https://mirror.ghproxy.com/https://github.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
         exit
         ;;
     2)
@@ -34,10 +35,10 @@ while true; do
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://mirror.ghproxy.com/https://github.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
         fi
         systemctl disable --now readsb
-        bash -c "$(wget -nv -O - https://mirror.ghproxy.com/https://github.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
         if [[ -f /root/variflight/UUID ]] ; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
@@ -48,7 +49,7 @@ while true; do
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://mirror.ghproxy.com/https://github.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
         fi
         systemctl disable --now readsb
         exit
@@ -56,13 +57,13 @@ while true; do
     4)
         echo "正在仅安装 readsb "
         systemctl disable --now readsb
-        bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/ADSB-scripts/raw/main/readsb-install.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-install.sh)"
         exit
         ;;
     5)
         echo "正在仅更新 readsb "
         systemctl disable --now readsb
-        bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/ADSB-scripts/raw/main/readsb-install.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-install.sh)"
         exit
         ;;
     6)
@@ -72,7 +73,7 @@ while true; do
         ;;
     7)
         echo "正在仅安装 tar1090 （中文版）"
-        bash -c "$(wget -nv -O - https://mirror.ghproxy.com/https://github.com/magihub/tar1090-zh/raw/master/install.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/install.sh)"
         exit
         ;;
     8)
@@ -80,9 +81,9 @@ while true; do
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://mirror.ghproxy.com/https://github.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
         fi
-        bash -c "$(wget -nv -O - https://mirror.ghproxy.com/https://github.com/magihub/tar1090-zh/raw/master/install.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/install.sh)"
         if [[ -f /root/variflight/UUID ]] ; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
@@ -93,7 +94,7 @@ while true; do
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
-        bash -c "$(wget -nv -O - https://mirror.ghproxy.com/https://github.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
         fi
         exit
         ;;
@@ -121,7 +122,7 @@ while true; do
         echo "-----------------------------------"
         exit 1
         fi
-        bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/Varilightadsb-upload/raw/main/setup.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/Varilightadsb-upload/raw/main/setup.sh)"
         exit
         ;;
     11)
@@ -149,7 +150,7 @@ while true; do
         exit 1
         fi
     
-        bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/Varilightadsb-upload/raw/main/setup.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/Varilightadsb-upload/raw/main/setup.sh)"
         exit
         ;;
     12)
@@ -214,12 +215,12 @@ while true; do
     16)
         echo "进入WiFi连接配置"
         sleep 2
-        bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/ADSB-scripts/raw/main/wifi-configuration.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/wifi-configuration.sh)"
         exit
         ;;
-    666)
+    66)
         echo "安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序"
-        bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
         sleep 2
         echo "正在安装飞常准variflight 数据上传程序"
         if [[ -f /run/dump1090-fa/aircraft.json ]] ; then
@@ -244,7 +245,7 @@ while true; do
         echo "-----------------------------------"
         exit 1
         fi
-        bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/Varilightadsb-upload/raw/main/setup.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/Varilightadsb-upload/raw/main/setup.sh)"
         exit
         ;; 
     17)
