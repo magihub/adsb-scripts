@@ -19,8 +19,8 @@ while true; do
     echo "66. 安装 readsb + tar1090 中文版 + 飞常准variflight 数据上传程序"
     echo
     echo "其他工具"
-    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置"    
-    echo "16. WiFi连接配置   17. 更改motd" 
+    echo "13. 自定义 UUID        14. 重新生成 UUID        15.更新tar1090页面UUID"    
+    echo "16. WiFi连接配置       17. 更改motd" 
     echo
     echo "88. 退出脚本"
     echo
