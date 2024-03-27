@@ -9,7 +9,7 @@ mkdir -p "$IPATH"
 cd "$IPATH"
 
 F=osm_tiles_10.tar.gz
-wget -O $F https://raw.githubusercontent.com/wiedehopf/adsb-scripts/releases/download/osm2022/$F
+wget -O $F https://mirror.ghproxy.com/https://github.com/wiedehopf/adsb-scripts/releases/download/osm2022/$F
 
 echo Extracting, this will take a bit .....
 tar --overwrite -x -f $F
