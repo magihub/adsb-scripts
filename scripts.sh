@@ -20,6 +20,7 @@ while true; do
     echo
     echo "其他工具"
     echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置"    
+    echo "16. WiFi连接配置   17. 更改motd" 
     echo
     echo "88. 退出脚本"
     echo
@@ -223,6 +224,12 @@ while true; do
         bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/adsb-scripts/raw/main/wifi-configuration.sh)"
         exit
         ;;
+    17)
+        echo "一键修改MOTD"
+    
+        bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/adsb-scripts/raw/main/motd.sh)"
+        exit
+        ;;        
     66)
         echo "安装 readsb + tar1090 中文版 + 飞常准variflight 数据上传程序"
         bash -c "$(wget -O - https://mirror.ghproxy.com/https://github.com/magihub/adsb-scripts/raw/main/readsb-tar1090-zh-install.sh)"
