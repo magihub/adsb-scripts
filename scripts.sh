@@ -19,8 +19,8 @@ while true; do
     echo "12. 卸载飞常准variflight 数据上传程序"
     echo
     echo "其他工具"
-    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置    17. 退出脚本"
-    echo
+    echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置"
+    echo "88. 退出脚本"
 
     read choice
 
@@ -248,7 +248,7 @@ while true; do
         bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/Varilightadsb-upload/raw/main/setup.sh)"
         exit
         ;; 
-    17)
+    88)
         echo "正在退出"
         exit
         ;;
