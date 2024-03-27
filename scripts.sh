@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Magic ADSB Tools"
+echo "Magic ADS-B Tools"
 echo
 
 while true; do
@@ -29,7 +29,7 @@ while true; do
     case $choice in
     1)
         echo "安装 readsb + tar1090-zh"
-        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/adsb-scripts/raw/main/readsb-tar1090-zh-install.sh)"
         exit
         ;;
     2)
@@ -40,7 +40,7 @@ while true; do
         bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/uninstall.sh)"
         fi
         systemctl disable --now readsb
-        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
+        bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/adsb-scripts/raw/main/readsb-tar1090-zh-install.sh)"
         if [[ -f /root/variflight/UUID ]] ; then
         sed -i -e "/你的UUID是/s/.*/<a>你的UUID是：$(cat \/root\/variflight\/UUID)<\/a>/" /usr/local/share/tar1090/html/index.html
         fi
@@ -59,13 +59,13 @@ while true; do
     4)
         echo "正在仅安装 readsb "
         systemctl disable --now readsb
-        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-install.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/adsb-scripts/raw/main/readsb-install.sh)"
         exit
         ;;
     5)
         echo "正在仅更新 readsb "
         systemctl disable --now readsb
-        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-install.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/adsb-scripts/raw/main/readsb-install.sh)"
         exit
         ;;
     6)
@@ -217,12 +217,12 @@ while true; do
     16)
         echo "进入WiFi连接配置"
         sleep 2
-        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/wifi-configuration.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/adsb-scripts/raw/main/wifi-configuration.sh)"
         exit
         ;;
     66)
         echo "安装 readsb + tar1090 中文版 + 飞常准variflight 数据上传程序"
-        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
+        bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/adsb-scripts/raw/main/readsb-tar1090-zh-install.sh)"
         sleep 2
         echo "正在安装飞常准variflight 数据上传程序"
         if [[ -f /run/dump1090-fa/aircraft.json ]] ; then
