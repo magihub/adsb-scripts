@@ -68,7 +68,7 @@ function getGIT() {
     fi
     return 0
 }
-BRANCH="stale"
+BRANCH="dev"
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
     BRANCH="jessie"
 fi
