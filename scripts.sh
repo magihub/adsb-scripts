@@ -23,7 +23,8 @@ while true; do
     echo "13. 自定义 UUID    14. 重新生成 UUID    15.更新tar1090页面UUID    16. WiFi连接配置"    
     echo
     echo "88. 退出脚本"
-
+    echo
+    
     read choice
 
     case $choice in
