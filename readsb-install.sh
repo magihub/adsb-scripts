@@ -11,7 +11,7 @@ set -e
 trap 'echo "[错误] 第 $LINENO 行命令在执行 $BASH_COMMAND 时出现错误"' ERR
 renice 10 $$
 
-repository="https://raw.githubusercontent.com/magihub/readsb.git"
+repository="https://mirror.ghproxy.com/https://github.com/magihub/readsb.git"
 
 # blacklist kernel driver as on ancient systems
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
@@ -27,7 +27,7 @@ mkdir -p $ipath
 
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
     # make sure the rtl-sdr rules are present on ancient systems
-    wget -O /tmp/rtl-sdr.rules https://raw.githubusercontent.com/magihub/ADSB-scripts/blob/main/osmocom-rtl-sdr.rules
+    wget -O /tmp/rtl-sdr.rules https://mirror.ghproxy.com/https://github.com/magihub/ADSB-scripts/blob/main/osmocom-rtl-sdr.rules
     cp /tmp/rtl-sdr.rules /etc/udev/rules.d/
 fi
 
@@ -186,8 +186,6 @@ systemctl restart readsb
 EOF
 chmod a+x /usr/local/bin/readsb-set-location
 
-rm -rf /etc/motd
-wget -P /etc https://raw.githubusercontent.com/magihub/ADSB-scripts/blob/main/motd
 
 echo
 echo "             readsb+tar1090 已经安装完成！但是目前 readsb 服务未运行！"
