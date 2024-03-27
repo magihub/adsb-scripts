@@ -6,12 +6,12 @@ echo
 while true; do
     echo "请选择一个选项："
     echo
-    echo "66. 安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序        "
+    echo "66. 安装 readsb + tar1090 中文版 + 飞常准variflight 数据上传程序        "
     echo
     echo "基础与前端服务"
-    echo "1. 安装 readsb + tar1090 （中文版）           2. 更新 readsb+tar1090 （中文版）        3. 卸载 readsb+tar1090 （中文版）"
-    echo "4. 仅安装 readsb                             5. 仅更新 readsb                         6. 仅卸载 readsb"
-    echo "7. 仅安装 tar1090 （中文版）                  8. 仅更新 tar1090 （中文版）              9. 仅卸载 tar1090 （中文版）"
+    echo "1. 安装 readsb + tar1090-zh           2. 更新 readsb+tar1090-zh        3. 卸载 readsb+tar1090-zh"
+    echo "4. 仅安装 readsb                      5. 仅更新 readsb                  6. 仅卸载 readsb"
+    echo "7. 仅安装 tar1090-zh                  8. 仅更新 tar1090-zh              9. 仅卸载 tar1090-zh"
     echo
     echo "数据上传服务"
     echo "10. 安装飞常准variflight 数据上传程序"
@@ -26,12 +26,12 @@ while true; do
 
     case $choice in
     1)
-        echo "安装 readsb + tar1090 （中文版）"
+        echo "安装 readsb + tar1090-zh"
         bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
         exit
         ;;
     2)
-        echo "正在更新 readsb + tar1090 （中文版）"
+        echo "正在更新 readsb + tar1090-zh"
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
@@ -72,12 +72,12 @@ while true; do
         exit
         ;;
     7)
-        echo "正在仅安装 tar1090 （中文版）"
+        echo "正在仅安装 tar1090-zh"
         bash -c "$(wget -nv -O - https://raw.githubusercontent.com/magihub/tar1090-zh/raw/master/install.sh)"
         exit
         ;;
     8)
-        echo "正在仅更新 tar1090 （中文版）"
+        echo "正在仅更新 tar1090-zh"
         if [[ -f /usr/local/share/tar1090/uninstall.sh ]] ; then
         bash /usr/local/share/tar1090/uninstall.sh
         else
@@ -219,7 +219,7 @@ while true; do
         exit
         ;;
     66)
-        echo "安装 readsb + tar1090 （中文版）+ 飞常准variflight 数据上传程序"
+        echo "安装 readsb + tar1090 中文版 + 飞常准variflight 数据上传程序"
         bash -c "$(wget -O - https://raw.githubusercontent.com/magihub/ADSB-scripts/raw/main/readsb-tar1090-zh-install.sh)"
         sleep 2
         echo "正在安装飞常准variflight 数据上传程序"
