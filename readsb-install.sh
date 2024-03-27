@@ -188,11 +188,8 @@ chmod a+x /usr/local/bin/readsb-set-location
 
 
 echo
-echo "             readsb+tar1090 已经安装完成！但是目前 readsb 服务未运行！"
+echo "             readsb 已经安装完成！但是目前 readsb 服务未运行！"
 echo "                       因此需要重启设备以启动 readsb 服务"
-echo "                 tar1090的Web页面为 http://$(ip route get 1.2.3.4 | grep -m1 -o -P 'src \K[0-9,.]*')/tar1090"
-echo "                     Web界面将显示错误，直至 readsb 正常运行"
-echo
 echo
 echo "                     不要忘记使用十进制纬度和经度设置您的位置"
 echo "                                    例如:"
