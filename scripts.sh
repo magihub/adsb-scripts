@@ -24,7 +24,7 @@ while true; do
     echo "88. 退出脚本"
     echo
 
-    echo "请选择一个选项："
+    echo "请输入一个选项代码："
     echo
     
     read choice
